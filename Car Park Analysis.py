@@ -22,9 +22,9 @@ print_all_cars(comment='Cars in the car park:')
 
 print()
 print('1.\n')
-#
-# # 1. Find which manufacturers have more than one car, print the manufacturer names on the screen.
-#
+
+# 1. Find which manufacturers have more than one car, and print the manufacturer names on the screen.
+
 def manufacturers():
     list_of_manufacturers = []
     for car in cars:
@@ -52,9 +52,9 @@ print()
 print('2.\n')
 
 # 2. Make a list of all cars of the selected manufacturer (e.g. Volvo),
-# print the car's license plate number, model, and year of manufacture on the screen.
-# If such car is not in the list, print the message:
-# "There are no cars by this manufacturer in the list.".
+# and print the car's license plate number, model, and year of manufacture on the screen.
+# If such car is not on the list, print the message:
+# "There are no cars by this manufacturer on the list.".
 
 def cars_by_selected_manufacturer():
     cars_by_manufacturer = []
@@ -66,7 +66,7 @@ def cars_by_selected_manufacturer():
                 cars_by_manufacturer.append(car)
                 found = True
         if not found:
-            print('There are no cars by this manufacturer in the list.')
+            print('There are no cars by this manufacturer on the list.')
         else:
             break
     return cars_by_manufacturer
@@ -88,7 +88,7 @@ print('3.\n')
 
 # 3. Make a list of cars older than 10 years, and enter all their data into the file "Old_Cars.csv".
 # If the program does not find any antiques, print a message on the screen
-# "There are no cars older than 10 years in the list".
+# "No cars older than 10 years are on the list".
 
 import datetime
 from csv import writer
@@ -105,7 +105,7 @@ def printing_and_writing_old_cars(comment, old_cars):
         csv_writer = writer(file1)
         if len(old_cars) == 0:
             print('There are no cars that are older than 10 years.')
-            csv_writer.writerow(['There are no cars that are older than 10 years.'])
+            csv_writer.writerow(['No cars older than 10 years are on the list.'])
         else:
             print('Cars older than 10 years:')
             csv_writer.writerow(['Cars older than 10 years:'])
